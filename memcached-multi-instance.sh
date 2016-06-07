@@ -40,14 +40,14 @@ multi-usage() {
 }
 
 BASENAME=$(basename $0) || ( critical Cannot get basename of script ; usage )
-[[ $BASENAME == "memcached-multi-instance-manager.sh" ]] && multi-usage
+[[ $BASENAME == "memcached-multi-instance.sh" ]] && multi-usage
 
 prog="memcached"
 
 DEBUG=0
 
 # Get memcache type from BASENAME - allows us to not need to maintain 3 versions of the init.d script
-MEMCACHEDTYPE=$(echo $BASENAME | awk -F. '{print $2}') || critical Cannot ascertain MEMCACHEDTYPE from basename. The format is $prog.type
+MEMCACHEDTYPE=$(echo $BASENAME | awk -F. '{print $2}') || critical Cannot ascertain MEMCACHEDTYPE from basename. The format is ${prog}.type
 # Declaring a type file for re-use with the lock file, sysconfig and pid file
 MEMCACHEDTYPEFILE=${prog}.${MEMCACHEDTYPE}
 pidfile=/var/run/${MEMCACHEDTYPEFILE}
