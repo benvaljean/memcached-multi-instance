@@ -6,7 +6,7 @@
 # config: /etc/sysconfig/${MEMCACHEDTYPEFILE}
 #
 NAME="memcached multi instance creator and manager Benjamin Goodacre git@github.com:benvaljean/memcached-multi-instance.git"
-VERSION=0.4.27
+VERSION=1.0.0
 
 USAGE=$(cat <<'EOF'
 Symbolic link to this init.d script in the format of memcached.TYPE where type is the name 
